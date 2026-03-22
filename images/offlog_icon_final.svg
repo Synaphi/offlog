@@ -1,0 +1,60 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="nebula" cx="50%" cy="55%" r="48%">
+      <stop offset="0%" stop-color="#4466BB" stop-opacity=".25"/>
+      <stop offset="100%" stop-color="#4466BB" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="nebula-blur">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="star-glow">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="200" height="200" rx="40" fill="#0A0A1E"/>
+
+  <!-- Nebula cloud -->
+  <ellipse cx="100" cy="108" rx="80" ry="60" fill="url(#nebula)" filter="url(#nebula-blur)"/>
+
+  <!-- Constellation lines -->
+  <g stroke="#5577CC" stroke-width="1.3" opacity=".4">
+    <line x1="100" y1="35" x2="160" y2="72"/>
+    <line x1="100" y1="35" x2="42" y2="78"/>
+    <line x1="160" y1="72" x2="145" y2="148"/>
+    <line x1="42" y1="78" x2="58" y2="155"/>
+    <line x1="100" y1="35" x2="100" y2="110"/>
+    <line x1="100" y1="110" x2="160" y2="72"/>
+    <line x1="100" y1="110" x2="42" y2="78"/>
+    <line x1="100" y1="110" x2="145" y2="148"/>
+    <line x1="100" y1="110" x2="58" y2="155"/>
+    <line x1="58" y1="155" x2="145" y2="148"/>
+  </g>
+
+  <!-- Stars with glow -->
+  <g filter="url(#star-glow)">
+    <!-- Top -->
+    <circle cx="100" cy="35" r="8" fill="#CCDDFF"/>
+    <circle cx="100" cy="35" r="3.5" fill="#fff"/>
+    <!-- Right -->
+    <circle cx="160" cy="72" r="7" fill="#BBCCFF"/>
+    <circle cx="160" cy="72" r="3" fill="#fff"/>
+    <!-- Left -->
+    <circle cx="42" cy="78" r="7" fill="#BBDDFF"/>
+    <circle cx="42" cy="78" r="3" fill="#fff"/>
+    <!-- Center (largest) -->
+    <circle cx="100" cy="110" r="11" fill="#DDEEFF"/>
+    <circle cx="100" cy="110" r="5" fill="#fff"/>
+    <!-- Bottom right -->
+    <circle cx="145" cy="148" r="7" fill="#BBCCFF"/>
+    <circle cx="145" cy="148" r="3" fill="#fff"/>
+    <!-- Bottom left -->
+    <circle cx="58" cy="155" r="7" fill="#BBDDFF"/>
+    <circle cx="58" cy="155" r="3" fill="#fff"/>
+  </g>
+</svg>
